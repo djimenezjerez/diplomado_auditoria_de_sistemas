@@ -1,3 +1,4 @@
+% !TeX root = ../main/main.tex
 \documentclass[../main/main.tex]{subfiles}
 
 \begin{document}
@@ -6,12 +7,16 @@
     \textbf{\large Resumen}
   \end{center}
 
-  En esta monografía se verificó el incremento en la velocidad de ejecución del algoritmo AES Rijndael ejecutado en GPU con respecto a la ejecución del mismo en CPU, mediante el paralelismo en la ejecución de tareas.
+  En esta monografía se analizó el proceso de minería que utiliza ``Graboid'', el primer gusano utilizado para minería de criptomonedas que funciona en el el entorno de virtualización de contenedores de aplicaciones Docker y que al momento de la presentación de este documento se encuentra en un porcentaje considerable de imágenes provistas oficialmente en el servidor oficial de DockerHub. Este gusano utiliza ciclos de procesador y un porcentaje de memoria RAM mediante scripts en lenguaje javascript que son ejecutados en el navegador web del cliente, con lo cual se presentan problemas de rendimiento en el cliente mientras se ejecuta la minería de criptomonedas.
 
-  Para demostrar la validez de dicho incremento en la velocidad de ejecución del algoritmo se realizaron pruebas mediante "Scripts" ejecutados en el entorno de desarrollo Python, los cuales generaron los resultados mostrados en los capítulos subsecuentes.
+  Para trazar el proceso de infección se utilizó un servidor en un entorno controlado, en el cual se instaló Docker y se utilizó una imagen identificada por su infección.
 
-  Posterior a las pruebas realizadas se muestran las conclusiones, mediante las cuales se puede aseverar que la velocidad en ejecución del algoritmo AES Rijndael llega a incrementarse de manera significativa cuando éste es ejecutado en GPU, pero por la tecnología actual de bus de transferencia de datos, el tiempo ganado en el incremento de velocidad es opacado por el tiempo necesario para la transferencia desde y hacia la GPU para la extracción de los resultados. En base a la experiencia se concluye que actualmente existen dispositivos capaces de realizar cálculos densos en cuestión de fracciones de segundos, pero por la restricción física de las líneas de transmisión de datos, el tiempo para enviar y recibir datos, los resultados se obtienen en un tiempo de hasta x10 con respecto al tiempo utilizado para el cálculo en CPU.
+  En cuanto al cliente, se realizaron pruebas en los dos navegadores web más populares, Google Chrome y Mozilla Firefox, para posteriormente realizar el análisis de procesamiento ocupado por el gusano.
 
-  No obstante, al igual que se logró el cambio de paradigma de procesadores de 32 bits a 64 bits, actualmente se están investigando medios de transferencia que no se limitan por las pistas de alguna aleación o de metal, a esta tecnología se la conoce como computación cuántica y será utilizada en un futuro cercano.
+  Para demostrar la validez del análisis se utilizó un sistema operativo ``limpio'' recién instalado con la mínima cantidad de procesos corriendo por detrás. En este entorno controlado se realizaron las mediciones del uso del procesador y la memoria RAM a fin de encontrar el porcentaje de uso del proceso generado por el gusano desde el navegador web.
+
+  En base a los datos obtenidos después de las pruebas se muestran los resultados y posterior a su análisis se llegan a obtener las conclusiones.
+
+  Sin duda, el primer gusano creado con este paradigma, Graboid, plantea una infección que en un futuro podría llegar a popularizarse; de hecho, al momento de la presentación de este documento podrían existir otras infecciones de este tipo, de las cuales, solo el tiempo se encargará de informarnos de su existencia.
 
 \end{document}
