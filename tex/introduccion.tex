@@ -4,37 +4,47 @@
 \begin{document}
 \espacio
 
-  En este capítulo se muestran: el panorama general del problema que se analizará, la importancia teórica y práctica del resultado del análisis.
+  En este capítulo se muestra el panorama general del problema que se analizará y la importancia teórica y práctica del resultado del análisis.
 
   \section{Aspectos generales}
 
-  La computación en la nube ha cambiado el paradigma con el que se brindan la mayoría de los servicios web en la actualidad. Alrededor del año de 1990, los servidores eran computadoras con características no muy distintas a las computadoras personales, la diferencia era que esos servidores se enfocaban únicamente en brindar un servicio en específico que los equipos clientes podían consultar. Con el paso del tiempo esta forma de brindar servicios cambió y se comenzaron a fabricar equipos servidores con características mucho mayores que las de un equipo de uso personal ya que los servicios precisaban de otros servicios como las bases de datos, en ese momento la web estática se convirtió en web dinámica y los datos se convirtieron en un valor comercial. Pero llegó otro instante en el que los servicios ya no solo ofrecian datos sino que se convirtieron en aplicaciones, soluciones que podían procesar datos de entrada y devolver cálculos bastante extensos con datos compartidos entre una gran cantidad de servicios interconectados entre sí, y con ello surgión finalmente la computación en la nube.
+  La computación en la nube ha cambiado el paradigma con el que se brindan la mayoría de los servicios web en la actualidad. Pero este cambio de paradigma incluye también algunos problemas, entre ellos, la necesidad de personal especializado en la administración de ambientes de virtualización. Sin embargo, es muy difícil encontrar personas especializadas tanto en el ambiente de infraestructura como en el de seguridad informática. Por lo cual las empresas e instituciones públicas deben contenmplar ahora la contratación de personal de infraestructura y de seguridad conformando un grupo multidisciplinario, con lo que los costos de manteminiento de los sistemas informáticos se incrementa.
 
-  Aún con la gran capacidad de procesamiento de los equipos servidores contravino el nuevo paradigma que distribuye dicha capacidad ya que la mayoría de los servicios tiene tiempos muertos de procesador en los cuales otra aplicación podría hacer uso del mismo y de esta forma incrementar la eficiencia de los servicios. Por ello las aplicaciones se distribuyeron aún más y se comenzaron a empaquetar en máquinas virtuales a nivel baremetal, pero aún quedaba el problema de la complejidad de despliegue de servicios, la interconexión de las máquinas virtuales y el trabajo duro en cuanto a la configuración de las aplicaciones mismas. Un ejemplo claro de este tipo de soluciones es Hyper-V y también KVM.
+  El adelanto en la tecnología llegó a tal punto en que el paradigma de administración de servidores de la decada de los 90 volvió a resurgir pero en ``centros de datos virtualizados''. Éste término se popularizó a finales del año 2004, cuando Amazon lanzó su servicio AWS\footnote{Amazon Web Services}
 
-  Los desarrolladores de sistemas se especializaron en un amplio número de áreas que componen a un mismo software; es decir que, ya no solo se necesitaban desarrolladores de aplicaciones fullstack, sino que ahora son necesarios programadores backend, frontend, desarrolladores de experiencia de usuario, de interfaz de usuario, testers de la calidad del software, etc. Con lo cual fué necesario aplicar un estandar para el desarrollo de software como SCRUM, Agile, Kanban, etc, que llegan a tener dos parámetros en común, estos son: Integración Contínua (CI)\footnote{Continuous Integration} y Despliegue Contínuo (CD)\footnote{Continuous Deployment}.
+  La computación en la nube y los centros de datos virtualizados son dos conceptos diferentes. El primero hace referencia al procesamiento de datos en servidores remotos, mientras que el segundo hace referencia a la administración de computadoras y redes virtualizadas, administradas de manera remota.
 
-  En respuesta a ello surgió la idea de un nuevo tipo de virtualización conocida como virtualización ligera o de contenedores, una de las primeras soluciones llegó a ser LVM\footnote{Logical Volume Management} que funciona básicamente generando un volumen para una aplicación específica que se basa en el kernel del sistema operativo anfitrión, posteriormente se generaron otras soluciones, una de las más populares al momento de este análisis es Docker\footnote{\href{https://www.docker.com/}}. Cualquiera de las soluciones de virtualización ligera se basa en el mismo principio, una imagen que contiene una base de la aplicación que se desea desplegar, en la cual se inserta un volumen con el código fuente a ejecutar en el caso de las aplicaciones o un volumen preparado con la estructura en el caso de bases de datos, ambos con un entorno específico de ejecución y nombres de espacio diferenciados para aislar cada contenedor en su propio ambiente de trabajo.
+  En este análisis se utiliza un concepto de virtualización todavía más específico pero que forma parte de los centros de datos virtualizados, la virtualización de aplicaciones mediante contenedores.
 
-  La solución como tal es una idea bastante potente ya que las ``recetas'' utilizadas para el despliegue de las aplicaciones es bastante flexible y además orquestable para rearmar una cantidad grande de aplicaciones interconectadas mediante redes SDN\footnote{Software Defined Network}. Pero el problema que surgió a medida que la popularidad de estas soluciones fue en incremento es la seguridad en los contenedores.
+  \begin{figure}[ht]
+    \centering
+    \caption{Administración de servidor AWS con entorno de virtualización Docker}
+    \includegraphics[width=10cm, keepaspectratio]{\main/introduccion/diagrama_aws.pdf}
+    \caption*{\textbf{Fuente:} Elaboración propia}
+  \end{figure}
 
-  Como se mencionó anteriormente, los contenedores se basan en imágenes prediseñadas que vienen instaladas con las configuraciones por defecto. El análisis que se muestra en este documento demuestra que un número razonable de imágenes provistas oficialmente para la plataforma de virtualización de contenedores Docker cuenta con las configuraciones por defecto, por lo que se implica que las recetas usadas para el despliegue de los contenedores deben contemplar la seguridad del contenedor como tal, además de la seguridad en el acceso a la aplicación del entorno propio de la imagen.
+  Sin embargo, el campo de la seguridad informática, aún dando sus primeros pasos en Bolivia, es muy importante y no se debe tomar a la ligera porque la tecnología avanza al mismo ritmo para las entidades privadas, públicas, la población y como no podría se de otra manera, para los delincuentes. Es en este sentido que los servidores deben ser protegidos contra una gran cantidad de tipos de ataques, entre uno de ellos está la inyección de código malicioso en las aplicaciones desplegadas, así como en las herramientas utilizadas para el despliegue.
 
   \section{Importancia teórica y práctica}
 
-  \begin{table}
+  Los entornos de virtualización completa como Hyper-V, VMWare vSphere o KVM son llamados de esta manera ya que se aislan del sistema operativo anfitrión, este tipo de virtualización por lo general requiere de equipos con características especiales para su funcionamiento.
+
+  Los entornos de virtualización basada en contenedores, también conocida como virtualización ligera, son simplemente un conjunto de directorios que contiene librerías y recursos para brindar un servicio específico, este tipo de virtualización genera pseudo máquinas virtuales ligeras y portables que comparten el kernel del sistema operativo anfitrión.
+
+  \begin{figure}[ht]
     \centering
-    \caption{Aplicaciones del algoritmo AES}
-    \input{\main/inc/tabla_uso_aes}
-    \caption*{\textbf{Fuente:} \href{https://en.wikipedia.org/wiki/AES_implementations}{Implementaciones AES, Aplicaciones, Wikipedia}}
-    \label{tabla_uso_aes}
-  \end{table}
+    \caption{Capas de virtualización dentro de un servidor físico}
+    \includegraphics[width=15cm, keepaspectratio]{\main/introduccion/baremetal_kvm_docker.pdf}
+    \caption*{\textbf{Fuente:} Elaboración propia}
+    \label{fig:baremetal_kvm_docker}
+  \end{figure}
 
-  El Estándar de Encriptación Avanzada (AES Rijndael) es utilizado en muchas aplicaciones actuales debido a su característica de patrón abierto para uso público y privado en aplicaciones personales y empresariales.
+  Comúnmente un servidor físico es dividido en máquinas virtuales mediante un hipervisor de virtualización completa y dentro de cada máquinas virtual se despliegan aplicaciones mediante contenedores administrados por un gestor de virtualización ligera como Docker o LXC, como se muestra en la Figura \ref{fig:baremetal_kvm_docker}. De esta manera se generan capas aisladas que mejoran la seguridad, el despliegue de aplicaciones en diferentes entornos y la administración de los servicios.
 
-  Cualquier incremento en la velocidad de ejecución de este algoritmo es de gran importancia práctica, ya que, como se muestra en el cuadro \ref{tabla_uso_aes}, los protocolos SSL y TLS trabajan con encriptación AES Rijndael, y es sabido que una gran parte de los servicios brindados en VPN y HTTPS para red local y/o internet transmiten grandes bloques de información encriptada, por lo cual la ejecución de este proceso debe ser lo más rápida posible a fin de evitar latencia en las comunicaciones.
+  Estudiando la distribución de aplicaciones basada en esta forma de administración, la empresa de hardware para seguridad informática  Palo Alto Networks, Inc. reconocida mundialmente, identificó que el gusano Graboid fue insertado en una cantidad considerable de imágenes que sirven de plantilla para muchas aplicaciones distruidas por DockerHub, el servidor oficial de imágenes para Docker.
 
-  Por otra parte, en lo que respecta a la teoría de hilos y paralelismo de ejecución de procesos, la investigación del uso de tarjetas gráficas como unidades de procesamiento de datos es todavía un área joven sobre la cual se está comenzando a investigar, con el desarrollo de la tecnología TITAN de NVidia \footnote{\href{https://www.nvidia.com/en-us/titan/titan-rtx/}{Tecnología NVidia Titan RTX}}, misma que pone a disposición mallas de miles de procesadores Tensor y CUDA; dichos procesadores son núcleos de uso específico y no cuentan con las capacidades de los procesadores de uso general.
+  La importancia teórica recae en el análisis e identifición del método de infección de este gusano
 
-  Entre los aspectos que caracterizan estas tecnologías de procesamiento están principalmente las operaciones matriciales, las operaciones de bucle independiente y las operaciones de transformación de datos.
+  Por otra parte, la importancia práctica diverge en dos puntos, el primero es el método de reconocimiento de la infección en contenedores desplegados, acción que nos lleva a subsanar el segundo punto que es la infección en los clientes de dichos contenedores. Por tanto, la importancia del reconocimiento de esta infección es directamente proporcional al número de clientes que hacen uso del servicio infectado, para de esta manera, poder descartar el mal funcionamiento del hardware en equipos cliente tomando en cuenta el bajo rendimiento inesperado generado por la infección de este gusano.
+
 \end{document}

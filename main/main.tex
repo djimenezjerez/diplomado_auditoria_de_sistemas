@@ -22,10 +22,9 @@
   \cleardoublepage %------- Nueva página -------%
   %------------------------------%
   %------- indice de figuras -------%
-%  \setcounter{page}{1} %------- Reiniciar contador de páginas -------%
+  \setcounter{page}{1} %------- Reiniciar contador de páginas -------%
 
-\renewcommand*{\thepage}{\roman{page}}
-%  \pagenumbering{roman} %------- Numerar con números romanos -------%
+\renewcommand*{\thepage}{\roman{page}} %------- Numerar con números romanos -------%
   \phantomsection
   \addcontentsline{toc}{section}{Índice de figuras}\listoffigures
   \cleardoublepage %------- Nueva página -------%
@@ -52,48 +51,48 @@
 \setcounter{page}{1}
 \renewcommand*{\thepage}{\arabic{page}}
 
-  % \chapter{Introducción}
-  % \subfile{../tex/introduccion.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Introducción}
+  \subfile{../tex/introduccion.tex}
+  \newpage %------- Nueva página -------%
 
-  % \chapter{Problema de investigación}
-  % \subfile{../tex/problema.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Problema de investigación}
+  \subfile{../tex/problema.tex}
+  \newpage %------- Nueva página -------%
 
-  % \chapter{Objetivos}
-  % \subfile{../tex/objetivos.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Objetivos}
+  \subfile{../tex/objetivos.tex}
+  \newpage %------- Nueva página -------%
 
-  % \chapter{Marco teórico}
-  % \subfile{../tex/marco_teorico.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Marco teórico}
+  \subfile{../tex/marco_teorico.tex}
+  \newpage %------- Nueva página -------%
 
-  % \chapter{Resultados}
-  % \subfile{../tex/resultados.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Resultados}
+  \subfile{../tex/resultados.tex}
+  \newpage %------- Nueva página -------%
 
-  % \chapter{Propuesta de solución}
-  % \subfile{../tex/propuesta.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Propuesta de solución}
+  \subfile{../tex/propuesta.tex}
+  \newpage %------- Nueva página -------%
 
-  % \chapter{Conclusiones}
-  % \subfile{../tex/conclusiones.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Conclusiones}
+  \subfile{../tex/conclusiones.tex}
+  \newpage %------- Nueva página -------%
 
-  % \chapter{Recomendaciones}
-  % \subfile{../tex/recomendaciones.tex}
-  % \newpage %------- Nueva página -------%
+  \chapter{Recomendaciones}
+  \subfile{../tex/recomendaciones.tex}
+  \newpage %------- Nueva página -------%
 
-  % \cleardoublepage
-  % \phantomsection
-  % \addcontentsline{toc}{chapter}{Bibliografía}
-  % \nocite{*} %------- Eliminar formato por defecto de bibliografía -------%
-  % \printbibliography
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Bibliografía}
+  \nocite{*} %------- Eliminar formato por defecto de bibliografía -------%
+  \printbibliography
 
-  % \setcounter{section}{0} %------- Reiniciar numeración de secciones -------%
-  % \renewcommand{\thesection}{Anexo \arabic{section}}
-  % \chapter*{Anexos}
-  % \addcontentsline{toc}{chapter}{Anexos}
-  % \subfile{../tex/anexos.tex}
+  \setcounter{section}{0} %------- Reiniciar numeración de secciones -------%
+  \renewcommand{\thesection}{Anexo \arabic{section}}
+  \chapter*{Anexos}
+  \addcontentsline{toc}{chapter}{Anexos}
+  \subfile{../tex/anexos.tex}
 
 \end{document}
