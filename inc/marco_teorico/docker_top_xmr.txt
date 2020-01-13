@@ -1,0 +1,12 @@
+Tasks:   6 total,   1 running,   5 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  5.7 us,  1.3 sy,  1.4 ni, 90.7 id,  0.6 wa,  0.0 hi,  0.2 si,  0.0 st
+KiB Mem :  2038676 total,   240572 free,   847488 used,   950616 buff/cache
+KiB Swap:  8787964 total,  8786928 free,     1036 used.  1040640 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+    1 monero    20   0  678532 276512   9344 S 200.0 13.6   8:45.30 xmrig
+   13 root      20   0   18504   3452   3016 S   0.0  0.2   0:00.25 bash
+  776 root      20   0  141108   1548     64 S   0.0  0.1   0:00.00 nginx
+  777 www-data  20   0  141484   3288   1576 S   0.0  0.2   0:00.00 nginx
+  778 www-data  20   0  141484   3288   1576 S   0.0  0.2   0:00.00 nginx
+  782 root      20   0   38704   3188   2672 R   0.0  0.2   0:00.00 top

