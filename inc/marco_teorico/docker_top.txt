@@ -1,0 +1,7 @@
+Mem: 1476628K used, 562048K free, 4660K shrd, 54076K buff, 803892K cached
+CPU:   0% usr   0% sys   0% nic  98% idle   0% io   0% irq   0% sirq
+Load average: 1.25 2.05 1.42 1/334 34
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+    1     0 root     S    60180   3%   0   0% nginx -a cryptonight -o stratum+tcp://pool.supportxmr.com:5555 -k --donate-level 1 --cpu-priority 0 -u 45TwKEr1LjoEPuxnbfuPhaXCf138AoQvtSJ3jdqg1gPxNjkSNbQpzZrGDaFHGLrVT7AzM7tU9QY8NVdr4H1C3r2d3XN9Cty
+   24     0 root     S     1592   0%   0   0% /bin/sh
+   34    24 root     R     1528   0%   1   0% top

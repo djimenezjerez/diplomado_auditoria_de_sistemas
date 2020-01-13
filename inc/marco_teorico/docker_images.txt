@@ -1,0 +1,4 @@
+$ docker image ls
+REPOSITORY                       TAG                 IMAGE ID            CREATED             SIZE
+krakenz/gakeaws-nginx            v2.0                071f6b113305        3 months ago        12.3MB
+danielma911/graboid_nginx-hide   v8.9                f8f7a946196e        4 months ago        12.3MB
