@@ -31,4 +31,4 @@
 *.bcf
 *.run.xml
 .vscode/
-_minted*
+_minted**.synctex(busy)
