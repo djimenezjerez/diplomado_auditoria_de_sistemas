@@ -16,6 +16,31 @@
 
   \href{https://miningpoolstats.stream/}{Estadísticas de Minería de Criptomonedas}
 
+  \begin{figure}[H]
+    \centering
+    \caption{Recursos utilizados por el gusano Graboid}
+    \newcommand\csvfile{../inc/marco_teorico/firefox_cpu.csv}
+    \pgfplotstableread[col sep=comma]{\csvfile}\datatable
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=14.5cm,
+        ymajorgrids=true,
+        xtick pos=left,
+        xtick=data,
+        xticklabels from table={\datatable}{HORA},
+        xticklabel style={font=\small, rotate=80, anchor=east},
+        enlarge x limits=-0.1,
+        xlabel={Hora [hh:mm:ss]},
+        ylabel={Uso del recurso [\%]}
+      ]
+        \addplot[cyan, line width=2pt, smooth] table [x expr=\coordindex, y=CPU, col sep=comma] {\csvfile};
+        \addlegendentry{CPU}
+        \addplot[orange, line width=2pt, smooth] table [x expr=\coordindex, y=RAM, col sep=comma] {\csvfile};
+        \addlegendentry{RAM}
+      \end{axis}
+    \end{tikzpicture}
+    \caption*{\textbf{Fuente:} Elaboración propia}
+  \end{figure}
 
 
 \end{document}
