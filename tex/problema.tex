@@ -15,7 +15,7 @@
   \begin{figure}[ht]
     \centering
     \caption{Conexión de entre CPU, memorias cache y memoria RAM}
-    \includegraphics[width=10cm, keepaspectratio]{\main/problema/cpu_cache_ram.pdf}
+    \includegraphics[width=10cm, keepaspectratio]{problema/cpu_cache_ram.pdf}
     \caption*{\textbf{Fuente:} Elaboración propia}
     \label{fig:cpu_cache_ram}
   \end{figure}
@@ -38,6 +38,25 @@
 
   \section{Alcances y límites}
 
-  
+  El objeto de análisis es el gusano Graboid, este gusano fue descubierto el 16 de Octubre de 2019 por los investigadores de la Unidad 42 de Paloalto Networks de acuerdo al resumen ejecutivo publicado por \cite{web:graboid_paloalto}.
+
+  Al momento del desarrollo del presente análisis, una gran parte de las imágenes infectadas con el gusano Graboid fuerón eliminadas del repositorio oficial de \href{https://hub.docker.com/}{Docker Hub} gracias a las denuncias de la propia comunidad; sin embargo, existe una imagen que explícitamente brinda un entorno infectado con este gusano para realizar pruebas de concepto del flujo y funcionamiento de la infección, esta imagen es \href{https://hub.docker.com/r/danielma911/graboid\_nginx-hide}{graboid\_nginx-hide}, subida por el usuario ``danielma911'' el 23 de Diciembre de 2019, cuya versión es la 8.9 y se identifica mediante sha256: 4827767b9383215053abe6688e82981b5fbeba5d9d40070876eb7948fb73dedb, instanciada en un entorno linux/amd64, con un peso de 5.81MB y descargada 27 veces al día 14 de Enero de 2020.
+
+  \begin{figure}[ht]
+    \centering
+    \caption{Imagen Docker infectada por Graboid}
+    \includegraphics[width=14cm, keepaspectratio]{problema/docker_image_graboid.png}
+    \caption*{\textbf{Fuente:} Elaboración propia}
+  \end{figure}
+
+  En cuanto al entorno de virtualización Docker, las pruebas se realizaron en la versión 19.03.5-ce, build 633a0ea838.
+
+  El sistema operativo utilizado tanto para el cliente como para el servidor, fue Ubuntu 18.04.3 LTS, corriendo sobre el kernel 5.0.0-32.34, con el entorno gráfico Xfce.
+
+  El navegador web utilizado para las pruebas fue Mozilla Firefox versión 68.0, basado en el motor Gecko versión 20100101.
+
+  Para la captura de paquetes de red se utilizó el software Wireshark versión 3.2.0.
+
+  El análisis contempla la generación de un contenedor con el servicio nginx infectado cuyo acceso fue a través del puerto 80, los procesos iniciados en el cliente mediante la ejecución del script de javascript encargado de la minería de criptomonedas, la medición del rendimiento antes, durante y después de la ejecución del proceso de infección y la captura de paquetes de red generados por la minería.
 
 \end{document}
