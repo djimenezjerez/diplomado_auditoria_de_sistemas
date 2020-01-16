@@ -4,16 +4,20 @@
 \begin{document}
 \espacio
 
-  En este capítulo se detalla el objetivo principal y los objetivos específicos.
+  En este capítulo se detalla el objetivo general y los objetivos específicos.
 
   \section{Objetivo general}
 
-  
-
+  Analizar el proceso de infección y el porcentaje de rendimiento utilizado por un navegador web infectado por del gusano Graboid desarrollado para la minería de criptomonedas.
 
   \section{Objetivos específicos}
 
   \begin{itemize}
-    \item 
+    \item Instanciar un contenedor corriendo el servidor web Nginx basado en una imagen infectada por Graboid.
+    \item Capturar paquetes de red a fin de mostrar el flujo de la infección desde el servidor al cliente y los servicios externos donde se suben los resultados de la minería.
+    \item Realizar la prueba de infección desde un cliente mediante el navegador web Mozilla Firefox.
+    \item Medir el uso de CPU y memoria RAM en el cliente antes, durante y después de la infección.
+    \item Calcular el porcentaje promedio de rendimiento utilizado por los procesos de minería del gusano Graboid.
+    \item Brindar recomendaciones para la detección del gusano en el contenedor docker y en el cliente, así como para prevenir la ejecución de este gusano en el navegador Mozilla Firefox.
   \end{itemize}
 \end{document}
