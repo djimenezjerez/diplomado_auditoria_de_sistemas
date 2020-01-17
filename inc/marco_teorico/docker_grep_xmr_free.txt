@@ -1,0 +1,3 @@
+➜  ~ docker exec --user root -it nginx which nginx                      
+/usr/sbin/nginx
+➜  ~ docker exec --user root -it nginx grep 'xmr' /usr/sbin/nginx

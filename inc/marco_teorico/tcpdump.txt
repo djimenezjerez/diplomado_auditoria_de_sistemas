@@ -1,0 +1,194 @@
+➜  ~ sudo tcpdump -i docker0
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on docker0, link-type EN10MB (Ethernet), capture size 262144 bytes
+18:02:13.171631 IP6 servidor > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+18:02:13.366640 IP6 servidor > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+18:02:13.451061 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:02:13.451087 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:02:13.451092 IP 172.17.0.2.58153 > 192.168.2.10.domain: 7738+ A? pool.supportxmr.com. (37)
+18:02:13.451162 IP 172.17.0.2.58153 > 192.168.2.10.domain: 62277+ AAAA? pool.supportxmr.com. (37)
+18:02:13.451653 IP 192.168.2.10.domain > 172.17.0.2.58153: 7738 3/0/0 CNAME pool-nyc.supportxmr.com., A 104.140.244.186, A 104.140.201.42 (92)
+18:02:13.451659 IP 192.168.2.10.domain > 172.17.0.2.58153: 62277 1/1/0 CNAME pool-nyc.supportxmr.com. (116)
+18:02:13.451903 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [S], seq 1157853417, win 64240, options [mss 1460,sackOK,TS val 754224787 ecr 0,nop,wscale 7], length 0
+18:02:13.574173 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [S.], seq 3681431428, ack 1157853418, win 28960, options [mss 1460,sackOK,TS val 694216841 ecr 754224787,nop,wscale 7], length 0
+18:02:13.574288 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 1, win 502, options [nop,nop,TS val 754224909 ecr 694216841], length 0
+18:02:13.574563 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 1:497, ack 1, win 502, options [nop,nop,TS val 754224909 ecr 694216841], length 496
+18:02:13.697117 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [.], ack 497, win 235, options [nop,nop,TS val 694216872 ecr 754224909], length 0
+18:02:13.698304 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 1:492, ack 497, win 235, options [nop,nop,TS val 694216872 ecr 754224909], length 491
+18:02:13.698345 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 492, win 501, options [nop,nop,TS val 754225033 ecr 694216872], length 0
+18:02:49.619601 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 912:1332, ack 497, win 235, options [nop,nop,TS val 694225852 ecr 754231676], length 420
+18:02:49.619729 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 1332, win 501, options [nop,nop,TS val 754260954 ecr 694225852], length 0
+18:02:54.787523 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:02:54.787505 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:02:54.787604 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:02:54.787610 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:02:58.115719 IP6 servidor > ip6-allrouters: ICMP6, router solicitation, length 16
+18:03:49.700114 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 497:599, ack 1332, win 501, options [nop,nop,TS val 754321035 ecr 694225852], length 102
+18:03:49.813258 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 1332:1752, ack 497, win 235, options [nop,nop,TS val 694240901 ecr 754260954], length 420
+18:03:49.813390 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 1752, win 501, options [nop,nop,TS val 754321148 ecr 694240901], length 0
+18:03:49.860592 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [.], ack 599, win 235, options [nop,nop,TS val 694240913 ecr 754321035], length 0
+18:03:49.935423 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 1752:1823, ack 599, win 235, options [nop,nop,TS val 694240931 ecr 754321148], length 71
+18:03:49.935574 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 1823, win 501, options [nop,nop,TS val 754321270 ecr 694240931], length 0
+18:03:54.947610 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:03:54.947694 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:03:54.951777 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:03:54.951806 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:04:22.675228 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 1823:2243, ack 599, win 235, options [nop,nop,TS val 694249116 ecr 754321270], length 420
+18:04:22.675340 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 2243, win 501, options [nop,nop,TS val 754354010 ecr 694249116], length 0
+18:04:27.715839 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:04:27.715835 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:04:27.715950 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:04:27.715956 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:05:05.096171 IP6 servidor > ip6-allrouters: ICMP6, router solicitation, length 16
+18:05:23.043608 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 599:701, ack 2243, win 501, options [nop,nop,TS val 754414378 ecr 694249116], length 102
+18:05:23.165636 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [.], ack 701, win 235, options [nop,nop,TS val 694264239 ecr 754414378], length 0
+18:05:23.175465 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 2243:2314, ack 701, win 235, options [nop,nop,TS val 694264241 ecr 754414378], length 71
+18:05:23.175498 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 2314, win 501, options [nop,nop,TS val 754414510 ecr 694264241], length 0
+18:05:28.387581 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:05:28.387631 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:06:08.217452 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 2314:2734, ack 701, win 235, options [nop,nop,TS val 694275502 ecr 754414510], length 420
+18:06:08.217565 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 2734, win 501, options [nop,nop,TS val 754459552 ecr 694275502], length 0
+18:06:13.444278 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:06:13.444272 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:06:13.444360 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:06:13.444366 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:06:41.631488 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 2734:3154, ack 701, win 235, options [nop,nop,TS val 694283854 ecr 754459552], length 420
+18:06:41.631613 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 3154, win 501, options [nop,nop,TS val 754492966 ecr 694283854], length 0
+18:06:46.731285 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:06:46.731251 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:06:46.731442 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:06:46.731448 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:07:10.902233 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 3154:3574, ack 701, win 235, options [nop,nop,TS val 694291171 ecr 754492966], length 420
+18:07:10.902348 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 3574, win 501, options [nop,nop,TS val 754522237 ecr 694291171], length 0
+18:07:15.910984 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:07:15.910978 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:07:15.911099 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:07:15.911106 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:07:38.506312 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 3574:3994, ack 701, win 235, options [nop,nop,TS val 694298074 ecr 754522237], length 420
+18:07:38.506416 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 3994, win 501, options [nop,nop,TS val 754549841 ecr 694298074], length 0
+18:07:43.568061 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:07:43.568147 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:08:38.902562 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 701:803, ack 3994, win 501, options [nop,nop,TS val 754610237 ecr 694298074], length 102
+18:08:39.050660 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 3994:4065, ack 803, win 235, options [nop,nop,TS val 694313204 ecr 754610237], length 71
+18:08:39.050768 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 4065, win 501, options [nop,nop,TS val 754610385 ecr 694313204], length 0
+18:08:44.235881 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:08:44.236022 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:09:10.860273 IP6 servidor > ip6-allrouters: ICMP6, router solicitation, length 16
+18:09:18.657916 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 4065:4485, ack 803, win 235, options [nop,nop,TS val 694323112 ecr 754610385], length 420
+18:09:18.658087 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 4485, win 501, options [nop,nop,TS val 754649993 ecr 694323112], length 0
+18:09:33.079711 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 803:1036, ack 4485, win 501, options [nop,nop,TS val 754664414 ecr 694323112], length 233
+18:09:33.221102 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 4485:4548, ack 1036, win 243, options [nop,nop,TS val 694326752 ecr 754664414], length 63
+18:09:33.221219 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 4548, win 501, options [nop,nop,TS val 754664556 ecr 694326752], length 0
+18:09:38.243513 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:09:38.243571 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:09:38.243604 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:09:38.243657 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:09:50.339333 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 4548:4968, ack 1036, win 243, options [nop,nop,TS val 694331032 ecr 754664556], length 420
+18:09:50.339455 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 4968, win 501, options [nop,nop,TS val 754681674 ecr 694331032], length 0
+18:10:50.358709 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 1036:1138, ack 4968, win 501, options [nop,nop,TS val 754741693 ecr 694331032], length 102
+18:10:50.465577 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 4968:5388, ack 1036, win 243, options [nop,nop,TS val 694346063 ecr 754681674], length 420
+18:10:50.465690 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 5388, win 501, options [nop,nop,TS val 754741800 ecr 694346063], length 0
+18:10:50.523443 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [.], ack 1138, win 243, options [nop,nop,TS val 694346077 ecr 754741693], length 0
+18:10:50.588582 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 5388:5459, ack 1138, win 243, options [nop,nop,TS val 694346094 ecr 754741800], length 71
+18:10:50.588689 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 5459, win 501, options [nop,nop,TS val 754741923 ecr 694346094], length 0
+18:10:55.556203 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:10:55.556307 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:11:50.583923 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 5459:5879, ack 1138, win 243, options [nop,nop,TS val 694361093 ecr 754741923], length 420
+18:11:50.584037 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 5879, win 501, options [nop,nop,TS val 754801919 ecr 694361093], length 0
+18:11:55.715896 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:11:55.715891 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:11:55.716056 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:11:55.716065 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:12:50.701974 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 5879:6299, ack 1138, win 243, options [nop,nop,TS val 694376123 ecr 754801919], length 420
+18:12:50.702093 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 6299, win 501, options [nop,nop,TS val 754862037 ecr 694376123], length 0
+18:12:55.880102 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:12:55.880097 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:12:55.880251 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:12:55.880258 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:13:50.828255 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 6299:6719, ack 1138, win 243, options [nop,nop,TS val 694391154 ecr 754862037], length 420
+18:13:50.828368 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 6719, win 501, options [nop,nop,TS val 754922163 ecr 694391154], length 0
+18:13:56.045207 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:13:56.045189 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:13:56.045406 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:13:56.045414 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:14:45.996157 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 6719:7139, ack 1138, win 243, options [nop,nop,TS val 694404946 ecr 754922163], length 420
+18:14:45.996270 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 7139, win 501, options [nop,nop,TS val 754977331 ecr 694404946], length 0
+18:14:50.931283 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 7139:7559, ack 1138, win 243, options [nop,nop,TS val 694406179 ecr 754977331], length 420
+18:14:50.931390 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 7559, win 501, options [nop,nop,TS val 754982266 ecr 694406179], length 0
+18:14:51.075607 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:14:51.075596 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:14:51.075731 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:14:51.075737 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:15:25.878548 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 1138:1371, ack 7559, win 501, options [nop,nop,TS val 755017213 ecr 694406179], length 233
+18:15:26.001115 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [.], ack 1371, win 252, options [nop,nop,TS val 694414948 ecr 755017213], length 0
+18:15:26.031595 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 7559:7622, ack 1371, win 252, options [nop,nop,TS val 694414955 ecr 755017213], length 63
+18:15:26.031778 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 7622, win 501, options [nop,nop,TS val 755017366 ecr 694414955], length 0
+18:15:31.011501 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:15:31.011577 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:15:35.532600 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 7622:8042, ack 1371, win 252, options [nop,nop,TS val 694417331 ecr 755017366], length 420
+18:15:35.532716 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 8042, win 501, options [nop,nop,TS val 755026867 ecr 694417331], length 0
+18:15:51.018312 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 8042:8462, ack 1371, win 252, options [nop,nop,TS val 694421201 ecr 755026867], length 420
+18:15:51.018417 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 8462, win 501, options [nop,nop,TS val 755042353 ecr 694421201], length 0
+18:16:21.485994 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 8462:8882, ack 1371, win 252, options [nop,nop,TS val 694428818 ecr 755042353], length 420
+18:16:21.486117 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 8882, win 501, options [nop,nop,TS val 755072821 ecr 694428818], length 0
+18:16:26.563726 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:16:26.563722 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:16:26.563845 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:16:26.563850 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:16:51.129333 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 8882:9302, ack 1371, win 252, options [nop,nop,TS val 694436228 ecr 755072821], length 420
+18:16:51.129586 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 9302, win 501, options [nop,nop,TS val 755102464 ecr 694436228], length 0
+18:16:56.268133 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:16:56.268271 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:17:22.186499 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 9302:9722, ack 1371, win 252, options [nop,nop,TS val 694443991 ecr 755102464], length 420
+18:17:22.186640 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 9722, win 501, options [nop,nop,TS val 755133521 ecr 694443991], length 0
+18:17:22.372281 IP6 servidor > ip6-allrouters: ICMP6, router solicitation, length 16
+18:17:27.235533 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:17:27.235529 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:17:27.235560 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:17:27.235564 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:17:37.079344 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 9722:10142, ack 1371, win 252, options [nop,nop,TS val 694447717 ecr 755133521], length 420
+18:17:37.079470 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 10142, win 501, options [nop,nop,TS val 755148414 ecr 694447717], length 0
+18:17:51.265038 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 10142:10562, ack 1371, win 252, options [nop,nop,TS val 694451263 ecr 755148414], length 420
+18:17:51.265143 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 10562, win 501, options [nop,nop,TS val 755162600 ecr 694451263], length 0
+18:17:56.419743 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:17:56.419830 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:18:35.199791 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 1371:1604, ack 10562, win 501, options [nop,nop,TS val 755206535 ecr 694451263], length 233
+18:18:35.345537 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 10562:10625, ack 1604, win 260, options [nop,nop,TS val 694462282 ecr 755206535], length 63
+18:18:35.345661 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 10625, win 501, options [nop,nop,TS val 755206680 ecr 694462282], length 0
+18:18:40.464243 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:18:40.464345 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:18:51.366876 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 10625:11045, ack 1604, win 260, options [nop,nop,TS val 694466289 ecr 755206680], length 420
+18:18:51.366999 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 11045, win 501, options [nop,nop,TS val 755222702 ecr 694466289], length 0
+18:19:51.468190 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 11045:11465, ack 1604, win 260, options [nop,nop,TS val 694481314 ecr 755222702], length 420
+18:19:51.468339 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 11465, win 501, options [nop,nop,TS val 755282803 ecr 694481314], length 0
+18:19:56.483971 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:19:56.483965 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:19:56.484141 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:19:56.484149 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:20:51.594708 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 11465:11885, ack 1604, win 260, options [nop,nop,TS val 694496346 ecr 755282803], length 420
+18:20:51.594826 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 11885, win 501, options [nop,nop,TS val 755342930 ecr 694496346], length 0
+18:20:56.644382 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:20:56.644377 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:20:56.644517 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:20:56.644526 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:21:51.706709 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 11885:12305, ack 1604, win 260, options [nop,nop,TS val 694511374 ecr 755342930], length 420
+18:21:51.706822 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 12305, win 501, options [nop,nop,TS val 755403042 ecr 694511374], length 0
+18:21:56.803649 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:21:56.803645 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:21:56.803769 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:21:56.803776 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:22:37.644891 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [P.], seq 1604:1837, ack 12305, win 501, options [nop,nop,TS val 755448980 ecr 694511374], length 233
+18:22:37.794881 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 12305:12368, ack 1837, win 269, options [nop,nop,TS val 694522895 ecr 755448980], length 63
+18:22:37.795002 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 12368, win 501, options [nop,nop,TS val 755449130 ecr 694522895], length 0
+18:22:42.895663 ARP, Request who-has 172.17.0.2 tell servidor, length 28
+18:22:42.895689 ARP, Request who-has servidor tell 172.17.0.2, length 28
+18:22:42.895786 ARP, Reply servidor is-at 02:42:7a:99:a6:e0 (oui Unknown), length 28
+18:22:42.895774 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02 (oui Unknown), length 28
+18:22:51.826579 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [P.], seq 12368:12788, ack 1837, win 269, options [nop,nop,TS val 694526403 ecr 755449130], length 420
+18:22:51.826689 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 12788, win 501, options [nop,nop,TS val 755463161 ecr 694526403], length 0
+18:23:09.991261 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [F.], seq 1837, ack 12788, win 501, options [nop,nop,TS val 755481326 ecr 694526403], length 0
+18:23:10.113490 IP 104.140.244.186.5555 > 172.17.0.2.34128: Flags [F.], seq 12788, ack 1838, win 269, options [nop,nop,TS val 694530976 ecr 755481326], length 0
+18:23:10.113631 IP 172.17.0.2.34128 > 104.140.244.186.5555: Flags [.], ack 12789, win 501, options [nop,nop,TS val 755481448 ecr 694530976], length 0
+188 packets captured
+192 packets received by filter
+4 packets dropped by kernel
