@@ -51,20 +51,21 @@
 
   En cuanto al entorno de virtualización Docker, las pruebas se realizaron en la versión 19.03.5-ce, build 633a0ea838.
 
-  El sistema operativo utilizado tanto para el cliente como para el servidor, fue Ubuntu 18.04.3 LTS, corriendo sobre el kernel 5.0.0-32.34, con el entorno gráfico Xfce.
-
-  El navegador web utilizado para las pruebas fue Mozilla Firefox versión 68.0, basado en el motor Gecko versión 20100101. En cuanto a la configuración del navegador, se dejaron los valores por defecto, verificando que uno de estos valores indica que los procesos de minería están permitidos como se muestra en la Figura \ref{fig:firefox_config_before}.
+  El sistema operativo utilizado tanto para el cliente como para el servidor, fue Ubuntu 18.04.3 LTS, corriendo sobre el kernel 5.0.0-23, con el entorno gráfico Xfce.
 
   \begin{figure}[ht]
     \centering
     \caption{Configuración por defecto del navegador Firefox}
-    % TODO
-    % \includegraphics[width=14cm, keepaspectratio]{problema/firefox_config_before.png}
+    \includegraphics[width=14cm, keepaspectratio]{problema/firefox_initial_config.png}
     \caption*{\textbf{Fuente:} Elaboración propia}
     \label{fig:firefox_config_before}
   \end{figure}
 
-  Para la captura de paquetes de red se utilizó el software Wireshark versión 3.2.0.
+  El navegador web utilizado para las pruebas fue Mozilla Firefox versión 68.0.1, basado en el motor Gecko versión 20100101. En cuanto a la configuración del navegador, se dejaron los valores por defecto, verificando que uno de estos valores indica que los procesos de minería están permitidos como se muestra en la Figura \ref{fig:firefox_config_before}.
+
+  Para la captura de paquetes de red se utilizó el software Wireshark versión 2.4.5. También se utilizó el software TCPDump en su versión 4.9.2, basado en libcap 1.8.1 con el backend de OpenSSL versión 1.1.1.
+
+  El entorno fue controlado en un ambiente aislado de VirtualBox para el cliente y el servidor aislando la subred de las máquinas de prueba infectadas. Ambos equipos, cliente y servidor, se instanciaron con las mismas características, memoria RAM de 2GB, 2 CPUs Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz y NIC virtualizada.
 
   El análisis contempla la generación de la instancia de un contenedor con el servicio nginx infectado con el puerto 80 abierto, los procesos iniciados en el cliente mediante la ejecución del script de javascript encargado de la minería de criptomonedas, la medición del rendimiento antes, durante y después de la ejecución del proceso de infección y la captura de paquetes de red generados por la minería.
 
