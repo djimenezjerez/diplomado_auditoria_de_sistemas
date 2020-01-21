@@ -53,7 +53,7 @@
     \item Cada administrador de cuentas acepta las ofertas más altas (entre las que realmente emitieron soluciones) en términos de costo nominal por unidad de dinero creado y acredita las cuentas de los licitantes en consecuencia.
   \end{enumerate}
 
-  En base a estos preceptos Satoshi Nakamoto, personaje desconocido hasta la fecha, diseñó un sistema de dinero digital de código abierto llamado ``Bitcoin'', este sistema vió la luz el 9 de enero de 2009 con un cambio menor a 0,05\$us, llegando a su auge en diciembre de 2017 con un cambio de 17.549,67\$us. Al momento del presente análisis esta criptomoneda tuvo un cambio de 8.704,04\$us.
+  En base a estos preceptos Satoshi Nakamoto, personaje desconocido hasta la fecha, diseñó un sistema de dinero digital de código abierto llamado ``Bitcoin'', este sistema vió la luz el 9 de enero de 2009 con un cambio menor a 0,05\$us, llegando a su auge en diciembre de 2017 con un cambio de 17.549,67\$us. Al momento del presente análisis esta criptomoneda estuvo a un cambio de 8.704,04\$us, de acuerdo a los datos obtenidos de \cite{web:bitstamp}.
 
   \begin{figure}[H]
     \centering
@@ -64,7 +64,7 @@
       \begin{axis}[
         width=14cm,
         ymajorgrids=true,
-        xtick pos=left,
+        tick pos=left,
         xtick=data,
         xticklabels from table={\datatable}{YEAR},
         xticklabel style={font=\small, rotate=80, anchor=east},
@@ -72,10 +72,11 @@
         enlarge y limits=-0.1,
         xlabel={Año},
         ylabel={Precio [\$us]},
-        yticklabels={0,1000,2000,5000,10000,20000},
-        ytick={0,1000,2000,5000,10000,20000},
+        yticklabels={0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000},
+        ytick={0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000},
+        ytick scale label code/.code={},
         ymin=0,
-        ymax=20000,
+        ymax=18000,
         tick style={draw=none}
       ]
         \addplot[blue, line width=1pt] table [x expr=\coordindex, y=PRICE, col sep=comma] {\csvfile};
@@ -84,6 +85,29 @@
     \caption*{\textbf{Fuente:} \cite{web:bitstamp}}
   \end{figure}
 
-  
+  La propuesta de Bitcoin conlleva también un registro de balance económico público basado en Blockchain\footnote{Cadena de Bloques}, esto significa que cada transacción lleva la firma digital representada por el hash de cada una de las partes del contrato, como se muestra en la Figura \ref{fig:bitcoin_transaction}.
+
+  \begin{figure}[ht]
+    \centering
+    \caption{Transacción mediante Blockchain}
+    \includegraphics[width=12cm, keepaspectratio]{marco_teorico/bitcoin_transaction.pdf}
+    \caption*{\textbf{Fuente:} \cite[p.~2]{article:satoshi_bitcoin}}
+    \label{fig:bitcoin_transaction}
+  \end{figure}
+
+  Cada transacción puede ser resuelta por más de un nodo al mismo tiempo por lo cual, el nodo que demuestre el cómputo más económico tiene derecho a reclamar lo que se denomina espacio de disco, esto evita las ramas de hashes huérfanos y produce un nuevo Árbol de Merkle, como se muestra en la Figura \ref{fig:bitcoin_disk_space}, que prácticamente es un hash que se basa en toda la historia de transacciones aceptadas en quorum por la mayoría de los nodos, generando así un único registro histórico de transacciones, descentralizado y compartido por todos los nodos.
+
+  \begin{figure}[ht]
+    \centering
+    \caption{Selección del cómputo más económico}
+    \includegraphics[width=12cm, keepaspectratio]{marco_teorico/bitcoin_disk_space.pdf}
+    \caption*{\textbf{Fuente:} \cite[p.~4]{article:satoshi_bitcoin}}
+    \label{fig:bitcoin_disk_space}
+  \end{figure}
+
+
+
+
+
 
 \end{document}

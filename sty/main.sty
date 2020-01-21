@@ -43,7 +43,11 @@
 \graphicspath{{../img/}{../inc/}}
 \usepackage{tikz}
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
+\usetikzlibrary{
+  pgfplots.groupplots,
+  pgfplots.units,
+}
+\pgfplotsset{compat=1.16, use units=true}
 %----------------------------------------------------%
 \usepackage{pdflscape} %------- Para hojas en paisaje -------%
 \usepackage{textcomp} %------- Tamaños de letras especiales -------%
@@ -228,3 +232,4 @@
 \makeatother
 
 \usepackage{mathtools}
+\usepackage{siunitx}
