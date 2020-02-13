@@ -95,11 +95,11 @@
     \label{fig:bitcoin_transaction}
   \end{figure}
 
-  Cada transacción es resuelta por más de un nodo al mismo tiempo, en una carrera por alcanzar la solución del algoritmo, por lo cual, el nodo que demuestre el cómputo más económico tiene derecho a reclamar lo que se denomina espacio de disco, esto evita las ramas de hashes huérfanos y produce un nuevo Árbol de Merkle, como se muestra en la Figura \ref{fig:bitcoin_disk_space}, que prácticamente es un hash que se basa en toda la historia de transacciones aceptadas en quorum por la mayoría de los nodos, generando así un único registro histórico de transacciones, descentralizado y compartido por todos los nodos.
+  Cada transacción es resuelta por más de un nodo al mismo tiempo, en una carrera por alcanzar la solución del algoritmo; el nodo que demuestre el cómputo más eficaz tiene derecho a reclamar lo que se denomina espacio de disco, esto evita las ramas de hashes huérfanos y produce< un nuevo Árbol de Merkle, como se muestra en la Figura \ref{fig:bitcoin_disk_space}, que prácticamente es un hash que se basa en toda la historia de transacciones aceptadas en quorum por la mayoría de los nodos, generando así un único registro histórico de transacciones, descentralizado y compartido por todos los nodos.
 
   \begin{figure}[ht]
     \centering
-    \caption{Selección del cómputo más económico}
+    \caption{Selección del cómputo más eficaz}
     \includegraphics[width=12cm, keepaspectratio]{marco_teorico/bitcoin_disk_space.pdf}
     \caption*{\textbf{Fuente:} \cite[p.~4]{article:satoshi_bitcoin}}
     \label{fig:bitcoin_disk_space}
