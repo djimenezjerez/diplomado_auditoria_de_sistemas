@@ -3,7 +3,7 @@
 
 \begin{document}
 \espacio
-  En este capítulo se muestran los conceptos referentes al entorno de virtualización de contenedores Docker, definición y proceso de la minería de criptomonedas y ataques tipo zombie.
+  En este capítulo se muestran los conceptos referentes al proceso de la minería de criptomonedas, entorno de virtualización de contenedores Docker y ataques tipo zombie.
 
   \section{Antecedentes}
 
@@ -16,7 +16,7 @@
     \caption*{\textbf{Fuente:} \cite{report:pandasecurity_coinhive_mining}}
   \end{figure}
 
-  Este tipo de ataques se produce globalmente, desapareció casi totalmente a finales del año 2011 pero volvió a surgir a finales del año 2017, debido al hecho de que los navegadores web tienen más accesos al hardware como GPUs\footnote{Graphics Processing Unit (Unidad de Procesamiento de Gráficos)} y a funciones de criptografía específicas en la CPU.
+  Este tipo de ataques, que se produce globalmente, desapareció casi totalmente a fines del 2011 pero volvió a surgir a fines del 2017, debido al hecho de que los navegadores web ganaron acceso al funciones de la GPU\footnote{Graphics Processing Unit (Unidad de Procesamiento de Gráficos)} y a funciones criptográficas específicas disponibles en la CPU.
 
   De acuerdo con \cite[p.~13]{report:pandasecurity_coinhive_mining}, el 59\% de las empresas en el Reino Unido han sido infectadas al menos por un gusano mediante este tipo de ataques.
 
@@ -29,7 +29,7 @@
     \caption*{\textbf{Fuente:} \cite{report:mcafee_threats}}
   \end{figure}
 
-  Este tipo de ataques ya no se producen de manera aislada o esporádica, por lo cual es necesario obtener la mayor información posible del proceso de infección y tomar en cuenta las recomendaciones para evitar infecciones por minería de criptomonedas.
+  Este tipo de ataques ya no se producen de manera aislada o esporádica, por lo cual es necesario obtener la mayor información posible referente al proceso de infección y tomar en cuenta las recomendaciones para evitar infecciones por minería de criptomonedas.
 
   \section{Blockchain y criptomonedas}
 
@@ -37,10 +37,9 @@
 
   \begin{enumerate}
     \item Cualquier nodo en la red puede crear monedas transmitiendo la solución a un problema computacional previamente no resuelto. Las únicas condiciones son que debe ser fácil determinar cuánto esfuerzo informático tomó para resolver el problema y la solución no debe tener valor, ya sea práctico o intelectual. El número de unidades monetarias creadas es igual al costo del esfuerzo informático. A este concepto se le denominó minería posteriormente.
-    \item Si un nodo desea transferir dinero a otro nodo, el primer nodo (Alicia) transmite el mensaje ``Doy X unidades de dinero a Bob'' firmado por Alicia. Sobre la transmisión de este mensaje, todos debitan la cuenta de Alicia por X unidades y acreditan a la cuenta Bob X unidades, a menos que esto cree un negativo
-    saldo en la cuenta de Alicia en cuyo caso se ignora el mensaje.
-    \item Un contrato válido debe incluir una garantía en caso de incumplimiento para cada parte participante del mismo. También incluye un árbitro en caso de que haya una disputa. Todas las partes en un contrato, incluido el árbitro, deben transmitir sus firmas antes de que entre en vigencia. Tras la emisión del contrato y todas las firmas, cada participante carga la cuenta de cada parte por el monto de la garantía máxima y se acredita también a un hash del contrato con la suma del máximo de indemnización. El contrato se hace efectivo si los débitos tienen éxito en cada parte sin producir un saldo negativo, de lo contrario el contrato se ignora y las cuentas se revierten
-    \item Si un contrato concluye sin disputa, cada parte transmite un mensaje firmado ``El contrato con hash SHA-1 concluye sin ejecución de garantías. O posiblemente, el contrato con hash SHA-1 concluye con las siguientes garantías: ...''. Tras la emisión de todas las firmas, cada participante acredita la cuenta de cada parte por el monto de la garantía máxima, elimina la cuenta del contrato, luego acredita o debita la cuenta de cada parte de acuerdo con el cronograma de garantías, si lo hay.
+    \item Si un nodo desea transferir dinero a otro nodo, el primer nodo (Alicia) transmite el mensaje ``Doy X unidades de dinero a Bob'' firmado por Alicia. Sobre la transmisión de este mensaje, todos debitan la cuenta de Alicia por X unidades y acreditan a la cuenta Bob X unidades, a menos que esto cree un saldo negativo en la cuenta de Alicia en cuyo caso se ignora el mensaje.
+    \item Un contrato válido debe incluir una garantía en caso de incumplimiento para cada parte participante del mismo. También incluye un árbitro en caso de que haya una disputa. Todas las partes en un contrato, incluido el árbitro, deben transmitir sus firmas antes de que entre en vigencia. Tras la emisión del contrato y todas las firmas, cada participante carga la cuenta de cada parte por el monto de la garantía máxima y se acredita también a un hash del contrato con la suma del máximo de indemnización. El contrato se hace efectivo si los débitos tienen éxito en cada parte sin producir un saldo negativo, de lo contrario el contrato se ignora y las cuentas se revierten a su estado original.
+    \item Si un contrato concluye sin disputa, cada parte transmite un mensaje firmado ``El contrato con hash SHA-1 concluye sin ejecución de garantías''. Tras la emisión de todas las firmas, cada participante acredita la cuenta de cada parte por el monto de la garantía máxima, elimina la cuenta del contrato, luego acredita o debita la cuenta de cada parte de acuerdo con el cronograma de garantías, si lo hay.
     \item Si las partes de un contrato no pueden llegar a un acuerdo sobre una conclusión apropiada incluso con la ayuda del árbitro, cada parte difunde un calendario de garantías/multas sugerido y cualquier argumento o evidencia a su favor. Cada participante toma una determinación en cuanto a reparaciones reales y/o multas, y modifica sus cuentas en consecuencia.
   \end{enumerate}
 
@@ -48,12 +47,12 @@
 
   \begin{enumerate}
     \item Los titulares de las cuentas calculan y negocian entre sí para determinar un aumento óptimo en la oferta de dinero para el próximo período. Independientemente de si los titulares de cuentas pueden alcanzar un consenso, cada uno transmite su cuota de creación de dinero y cualquier cálculo macroeconómico realizado para respaldar las cifras.
-    \item Cualquiera que quiera crear dinero emite una oferta en forma de $<x, y>$ donde $x$ es la cantidad de dinero que quiere crear, e $y$ es un problema no resuelto de una clase de problema predeterminada. Cada problema debe tener un costo nominal (en años MIPS\footnote{Millions of Instructions Per Second (Millones de Instrucciones Por Segundo)}, por ejemplo) que se acuerde públicamente.
-    \item Después de ver las ofertas, los que presentaron ofertas en la fase de licitación ahora pueden resolver los problemas en sus ofertas y transmitir las soluciones.
+    \item Cualquiera que quiera crear dinero emite una oferta en forma de $<x, y>$ donde $x$ es la cantidad de dinero que quiere crear, e $y$ es un problema no resuelto con un tipo de dificultad asociado. Cada problema debe tener un costo nominal (en años MIPS\footnote{Millions of Instructions Per Second (Millones de Instrucciones Por Segundo)}.
+    \item Los que presentaron ofertas en la fase de licitación ahora pueden resolver los problemas y transmitir las soluciones.
     \item Cada administrador de cuentas acepta las ofertas más altas (entre las que realmente emitieron soluciones) en términos de costo nominal por unidad de dinero creado y acredita las cuentas de los licitantes en consecuencia.
   \end{enumerate}
 
-  En base a estos preceptos Satoshi Nakamoto, personaje desconocido hasta la fecha, diseñó un sistema de dinero digital de código abierto llamado ``Bitcoin'', este sistema vió la luz el 9 de enero de 2009 con un cambio menor a 0,05\$us, llegando a su auge en diciembre de 2017 con un cambio de 17.549,67\$us. Al momento del presente análisis esta criptomoneda estuvo a un cambio de 8.704,04\$us, de acuerdo a los datos obtenidos de \cite{web:bitstamp}.
+  En base a estos preceptos Satoshi Nakamoto, cuya identidad es desconocida hasta la fecha, diseñó un sistema de dinero digital de código abierto llamado ``Bitcoin''. Este sistema vió la luz el 9 de enero de 2009 con un cambio menor a 0,05\$us, llegando a su cúspide en diciembre de 2017 con un cambio de 16.417,22\$us. Al momento del presente análisis, Bitcoin tuvo un cambio de 8.704,04\$us, de acuerdo a los datos obtenidos de \cite{web:bitstamp}.
 
   \begin{figure}[H]
     \centering
@@ -87,7 +86,7 @@
 
   La propuesta de Bitcoin conlleva también un registro de balance económico público basado en Blockchain\footnote{Cadena de Bloques}, esto significa que cada transacción lleva la firma digital representada por el hash de cada una de las partes del contrato, como se muestra en la Figura \ref{fig:bitcoin_transaction}.
 
-  \begin{figure}[ht]
+  \begin{figure}[H]
     \centering
     \caption{Transacción mediante Blockchain}
     \includegraphics[width=12cm, keepaspectratio]{marco_teorico/bitcoin_transaction.pdf}
@@ -95,20 +94,33 @@
     \label{fig:bitcoin_transaction}
   \end{figure}
 
-  Cada transacción es resuelta por más de un nodo al mismo tiempo, en una carrera por alcanzar la solución del algoritmo; el nodo que demuestre el cómputo más eficaz tiene derecho a reclamar lo que se denomina espacio de disco, esto evita las ramas de hashes huérfanos y produce< un nuevo Árbol de Merkle, como se muestra en la Figura \ref{fig:bitcoin_disk_space}, que prácticamente es un hash que se basa en toda la historia de transacciones aceptadas en quorum por la mayoría de los nodos, generando así un único registro histórico de transacciones, descentralizado y compartido por todos los nodos.
-
-  \begin{figure}[ht]
+  \begin{figure}[H]
     \centering
     \caption{Selección del cómputo más eficaz}
-    \includegraphics[width=12cm, keepaspectratio]{marco_teorico/bitcoin_disk_space.pdf}
+    \includegraphics[width=14cm, keepaspectratio]{marco_teorico/bitcoin_disk_space.pdf}
     \caption*{\textbf{Fuente:} \cite[p.~4]{article:satoshi_bitcoin}}
     \label{fig:bitcoin_disk_space}
   \end{figure}
 
-  Cabe mencionar que en base a la primera moneda digital ``Bitcoin'', se desarrollaron proyectos paralelos con la inclusión de mejoras en las transacciones, como en los contratos
+  Cada transacción es resuelta por más de un nodo al mismo tiempo, en una carrera por alcanzar la solución del algoritmo; el nodo que demuestre el cómputo más eficaz tiene derecho a reclamar lo que se denomina espacio de disco, esto evita las ramas de hashes huérfanos y produce un nuevo Árbol de Merkle, como se muestra en la Figura \ref{fig:bitcoin_disk_space}, que prácticamente es un hash que se basa en toda la historia de transacciones aceptadas en quorum por la mayoría de los nodos, generando así un único registro histórico de transacciones, descentralizado y compartido por todos los nodos.
 
+  Cabe mencionar que en base a la primera moneda digital ``Bitcoin'', se desarrollaron proyectos paralelos con la inclusión de mejoras tanto en las transacciones como en los contratos, el listado de las criptomonedas más populares al momento del presente análisis se muestra en la Tabla \ref{tab:popular_cryptocurrencies}.
 
+  \begin{table}[H]
+    \centering
+    \caption{Criptomonedas con mayor flujo}
+    \input{\main/inc/marco_teorico/popular_cryptocurrencies}
+    \caption*{\textbf{Fuente:} \cite{web:coinmarketcap}}
+    \label{tab:popular_cryptocurrencies}
+  \end{table}
 
+  \section{Entorno de virtualización Docker}
 
+  \begin{figure}[H]
+    \centering
+    \caption{Virtualización ligera y virtualización completa}
+    \includegraphics[width=14cm, keepaspectratio]{marco_teorico/baremetal_kvm_docker.pdf}
+    \caption*{\textbf{Fuente:} Elaboración propia}
+  \end{figure}
 
 \end{document}
